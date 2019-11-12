@@ -22,7 +22,9 @@ Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope CurrentUser
 ```
 Website-Exists  -websiteName 'anyName'  # returns 'True' if website exists
 
-Create-Website -websiteName 'anyName' # creates website if it does not exist
+Create-Website -websiteName 'Some-Web-Site' -bindings '@{protocol="http";bindingInformation=":80:Some-Web-Site"}' -physicalPath 'c:\Default-Web-Site' # creates website if it does not exist
+
+Drop-Website -websiteName 'Some-Web-Site' # drops website if that website found
 
 ```
 
